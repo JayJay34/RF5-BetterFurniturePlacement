@@ -18,5 +18,5 @@ Configure settings in "\BepInEx\config\BetterFurniturePlacementMod.cfg"
 - IgnoreKey - Keyboard button needed to be held to ignore placement collision.
 
 ## Known Issues
-Launching the game with the Launcher stops BepInEx from working
-Controller & Keyboard Prompts + Buttons don't play nice, need to fix.
+- Launching the game with the Launcher stops BepInEx from working
+- Controller & Keyboard Prompts + Buttons don't play nice, need to fix.
