@@ -7,8 +7,6 @@ using System;
 using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.UI;
-using System.Net;
-using System.Net.Sockets;
 using Il2CppSystem.Collections.Generic;
 
 namespace FurnitureMod
