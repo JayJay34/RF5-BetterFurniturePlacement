@@ -18,7 +18,7 @@ namespace FurnitureMod
 
         public const string pluginGuid = "BetterFurniturePlacementMod";
         public const string pluginName = "Better Furniture Placement Mod";
-        public const string pluginVersion = "0.4";
+        public const string pluginVersion = "0.5";
 
         internal static new ManualLogSource Log;
         public static PlayerCharacterController playerController;
@@ -93,6 +93,7 @@ namespace FurnitureMod
                     {
                         CreateIgnoreBtn();
                     }
+
                     if (bAlwaysIgnore.Value)
                     {
                         shadowIgnore = true;
@@ -107,13 +108,15 @@ namespace FurnitureMod
                         {
                             shadowIgnore = false;
                         }
-                        if (UnityEngine.Input.GetKeyDown(kIncreaseGrid.Value))
-                        {
-                            gridSize = Mathf.Clamp((gridSize + 0.05f), 0.05f, 1f);
-                        }
-                        if (UnityEngine.Input.GetKeyUp(kDecreaseGrid.Value))
-                        {
-                            gridSize = Mathf.Clamp((gridSize - 0.05f), 0.05f, 1f);
+                    }
+
+                    if (UnityEngine.Input.GetKeyDown(kIncreaseGrid.Value))
+                    {
+                        gridSize = Mathf.Clamp((gridSize + 0.05f), 0.05f, 1f);
+                    }
+                    if (UnityEngine.Input.GetKeyUp(kDecreaseGrid.Value))
+                    {
+                        gridSize = Mathf.Clamp((gridSize - 0.05f), 0.05f, 1f);
                         }
                     }
                 }
@@ -161,7 +164,7 @@ namespace FurnitureMod
                 {
                     Vector3 oldLocation = __instance.transform.position;
                     Vector3 oldRotation = __instance.transform.eulerAngles;
-                    __instance.transform.position = new Vector3(((Mathf.Round(oldLocation.x / 0.25f)) * 0.25f), oldLocation.y, ((Mathf.Round(oldLocation.z / 0.25f)) * 0.25f));
+                    __instance.transform.position = new Vector3(((Mathf.Round(oldLocation.x / gridSize)) * gridSize), oldLocation.y, ((Mathf.Round(oldLocation.z / gridSize)) * gridSize));
                     __instance.transform.eulerAngles = new Vector3(oldRotation.x, (Mathf.Round(oldRotation.y / 90) * 90), oldRotation.z);
                 }
 
