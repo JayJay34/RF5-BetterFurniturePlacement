@@ -117,7 +117,6 @@ namespace FurnitureMod
                     if (UnityEngine.Input.GetKeyUp(kDecreaseGrid.Value))
                     {
                         gridSize = Mathf.Clamp((gridSize - 0.05f), 0.05f, 1f);
-                        }
                     }
                 }
             }
